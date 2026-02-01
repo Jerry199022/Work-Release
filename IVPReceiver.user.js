@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         通用接收器
 // @namespace    Universal Receiver
-// @version      V15
+// @version      V16
 // @description  同時支持 IVP 內部系統與 UPS 官網的自動查詢接收器。後臺保活功能。
 // @author       Jerry Law
 // @match        https://ivp.inside.ups.com/internal-visibility-portal*
