@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Case查重與指派分析
 // @namespace    Case duplicate and find A/C
-// @version      V19
+// @version      V20
 // @description  集成Case查重、指派分析(儀表盤可視化+雙向聯動+智能標記)、自動標示與緩存功能。
 // @author       Jerry Law
 // @match        https://upsdrive.lightning.force.com/lightning/*
