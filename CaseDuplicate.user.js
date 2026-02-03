@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Case查重與指派分析
 // @namespace    Case duplicate and find A/C
-// @version      V20
+// @version      V22
 // @description  集成Case查重、指派分析(儀表盤可視化+雙向聯動+智能標記)、自動標示與緩存功能。修復與CEC增強腳本的複製按鈕衝突問題。
 // @author       Jerry Law
 // @match        https://upsdrive.lightning.force.com/lightning/*
