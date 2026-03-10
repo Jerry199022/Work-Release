@@ -1,3 +1,91 @@
+const CEC_PERMISSION_CONFIG =
+#權限與功能配置檔
+
+[Permissions]
+# ---------------------------------------------------------
+Admin: ALL
+
+# ---------------------------------------------------------
+PCA: ALL
+
+# ---------------------------------------------------------
+# CRG: 客服與查詢人員
+# 擁有除了 "PCA 與特殊案件邏輯" 以外的所有功能
+CRG: feat_iwt_buttons, feat_iwt_auto_execute, feat_quick_action_buttons, autoSaveAfterQuickAction, autoScrollAfterActionButtons, autoAssignUser, feat_template_shortcuts, feat_manual_convert_btns, feat_auto_convert, postInsertionEnhancementsEnabled, autoIVPQueryEnabled, autoWebQueryEnabled, autoSwitchEnabled, feat_datatable_ivp_btns, blockIVPCard, accountHighlightMode, feat_suspended_blocker, feat_contact_copy, feat_modal_table_enhance, autoLinkContactOnCopy, sentinelCloseEnabled, followUpPanelEnabled, feat_followup_set_time, feat_followup_send_intercept, notifyOnRepliedCaseEnabled, highlightExpiringCasesEnabled, feat_change_owner_menu, feat_related_cases_extractor, autoLoadAllUpdates, cleanModeEnabled, feat_header_case_copy, feat_compose_btn_alert, feat_associate_btn_alert, feat_desc_height_adjust, feat_top_control_btns, feat_export_config, feat_export_reports
+
+# ---------------------------------------------------------
+# Guest: 預設/新手角色
+# 僅保留自動指派、模態框按鈕、彈窗表格增強、以及 IVP/Web 查詢相關功能
+Guest: autoAssignUser, feat_quick_action_buttons, feat_modal_table_enhance, autoIVPQueryEnabled, autoWebQueryEnabled, autoSwitchEnabled, feat_datatable_ivp_btns
+
+[Users]
+# 定義各角色包含的人員 (請填寫與 Case Owner 完全一致的名稱)
+Admin: Jerry Law
+PCA: Alice Wong, Bob Chen
+CRG: David Lee, Eva Green
+`;
 
 
-function _0x3dc0(){const _0x83070a=['mJG3otm5otbzvNvHq3a','ntq4nJq5DurOD2fn','mtmWnZC4nLzzBxfPuG','cIpMRiRPMzdOIiFLIP/OG73PHy3NVA7MQPqkcLTqzxjTAxnZAw9UC10kiYaTls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0kqwrTAw46iefmtaOkiYaTls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0kuenboIbbteWkcImGls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0TcImGq1jhoIdLRQlMNi3OIiFMN6xOQAlKURRLK6ekiYdMK4hMNiNPMAtKUOyGiLbdqsdOIiFNIBNMRORMOyJKU7BPGO/OVk8Iios7PEwKLUEAHoAjGoACIEwkN+IdVqPduKC6igzLyxrFAxD0x2j1DhrVBNmSigzLyxrFAxD0x2f1Dg9FzxHLy3v0zsWGzMvHDf9XDwLJA19Hy3rPB25FyNv0Dg9UCYWGyxv0B1nHDMvbzNrLCLf1AwnRqwn0Aw9UlcbHDxrVu2nYB2XSqwz0zxjby3rPB25cDxr0B25ZlcbHDxrVqxnZAwDUvxnLCIWGzMvHDf90zw1WBgf0zv9ZAg9YDgn1DhmSigzLyxrFBwfUDwfSx2nVBNzLCNrFyNrUCYWGzMvHDf9HDxrVx2nVBNzLCNqSihbVC3rjBNnLCNrPB25fBMHHBMnLBwvUDhnfBMfIBgvKlcbHDxrVsvzquxvLCNLfBMfIBgvKlcbHDxrVv2vIuxvLCNLfBMfIBgvKlcbHDxrVu3DPDgnOrw5HyMXLzcWGzMvHDf9KyxrHDgfIBgvFAxzWx2j0BNmSigjSB2nRsvzqq2fYzcWGywnJB3vUDeHPz2HSAwDODe1VzguSigzLyxrFC3vZCgvUzgvKx2jSB2nRzxiSigzLyxrFy29UDgfJDf9JB3b5lcbMzwf0x21VzgfSx3rHyMXLx2vUAgfUy2uSigf1Dg9mAw5Rq29UDgfJDe9Uq29WEsWGC2vUDgLUzwXdBg9ZzuvUywjSzwqSigzVBgXVD1vWugfUzwXfBMfIBgvKlcbMzwf0x2zVBgXVD3vWx3nLDf90Aw1LlcbMzwf0x2zVBgXVD3vWx3nLBMrFAw50zxjJzxb0lcbUB3rPzNLpBLjLCgXPzwrdyxnLrw5HyMXLzcWGAgLNAgXPz2H0rxHWAxjPBMDdyxnLC0vUywjSzwqSigzLyxrFy2HHBMDLx293BMvYx21LBNuSigzLyxrFCMvSyxrLzf9JyxnLC19LEhrYywn0B3iSigf1Dg9mB2fKqwXSvxbKyxrLCYWGy2XLyw5nB2rLrw5HyMXLzcWGzMvHDf9OzwfKzxjFy2fZzv9JB3b5lcbMzwf0x2nVBxbVC2vFyNrUx2fSzxj0lcbMzwf0x2fZC29JAwf0zv9IDg5FywXLCNqSigzLyxrFzgvZy19OzwLNAhrFywrQDxn0lcbMzwf0x3rVCf9JB250CM9Sx2j0BNmSigzLyxrFzxHWB3j0x2nVBMzPzYWGzMvHDf9LEhbVCNrFCMvWB3j0CWOkiYaTls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0Tls0kiYbhDwvZDdOG6Acq6kITl+AwSoAjI+INKUIjSGOJiowdHEs/NEEvMEIhQUwlLEAmH+A0VUoaGEAOOEAfI+AHHUAmIEMiLEoaGEw9IoEQL+IHQoAGVowINUw8T+oaGEs7PEwpIIbjvLaVv2vIioAFPEIPOUEBUoMxNowkN+IdVqPhDwvZDdOGyxv0B0fZC2LNBLvZzxiSigzLyxrFCxvPy2TFywn0Aw9Ux2j1DhrVBNmSigzLyxrFBw9KywXFDgfIBgvFzw5Oyw5JzsWGyxv0B0Lwuff1zxj5rw5HyMXLzcWGyxv0B1DLyLf1zxj5rw5HyMXLzcWGyxv0B1n3AxrJAevUywjSzwqSigzLyxrFzgf0yxrHyMXLx2L2Cf9IDg5ZcGPBvxnLCNnDcImG5A6A576P5zce6kEs6iMY5yYf5zcR55Qe5lQ65zoHicJOQ4VLOAVLR6VOIiCGq2fZzsbpD25LCIdLROZLHAJKUidOH7tNMOtLKi3NQlePcKfKBwLUoIbkzxjYEsbmyxCkuenboIbbBgLJzsbxB25NlcbcB2iGq2HLBGPduKC6ierHDMLKieXLzsWGrxzHieDYzwvUcG','nw1czxb6Eq','mZe0otK1ogH6EwLhyG','nJaZmteYwwfztLLH','otK2ndy5r01TChnt','nJaYndy2owrlwMzyvW','mtm2tLfxALru','owvMEvfJqG'];_0x3dc0=function(){return _0x83070a;};return _0x3dc0();}function _0x8f61(_0x318135,_0x4b16d2){const _0x3dc0b0=_0x3dc0();return _0x8f61=function(_0x8f6105,_0x1a11b4){_0x8f6105=_0x8f6105-0x149;let _0x1a6844=_0x3dc0b0[_0x8f6105];if(_0x8f61['OPfnjk']===undefined){var _0x301883=function(_0x43e2c9){const _0x4fc35a='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x44bc75='',_0x2120ee='';for(let _0x40964c=0x0,_0x4b6450,_0x510bdf,_0x550704=0x0;_0x510bdf=_0x43e2c9['charAt'](_0x550704++);~_0x510bdf&&(_0x4b6450=_0x40964c%0x4?_0x4b6450*0x40+_0x510bdf:_0x510bdf,_0x40964c++%0x4)?_0x44bc75+=String['fromCharCode'](0xff&_0x4b6450>>(-0x2*_0x40964c&0x6)):0x0){_0x510bdf=_0x4fc35a['indexOf'](_0x510bdf);}for(let _0x18c8d7=0x0,_0x4283bc=_0x44bc75['length'];_0x18c8d7<_0x4283bc;_0x18c8d7++){_0x2120ee+='%'+('00'+_0x44bc75['charCodeAt'](_0x18c8d7)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2120ee);};_0x8f61['KwSTTL']=_0x301883,_0x318135=arguments,_0x8f61['OPfnjk']=!![];}const _0x2f7a2d=_0x3dc0b0[0x0],_0x2856f8=_0x8f6105+_0x2f7a2d,_0x282fdf=_0x318135[_0x2856f8];return!_0x282fdf?(_0x1a6844=_0x8f61['KwSTTL'](_0x1a6844),_0x318135[_0x2856f8]=_0x1a6844):_0x1a6844=_0x282fdf,_0x1a6844;},_0x8f61(_0x318135,_0x4b16d2);}const _0x3722ec=_0x8f61;(function(_0x592a79,_0x14f9cd){const _0x1b7536={_0x1128ad:0x14c,_0x3d322b:0x153,_0x230816:0x152,_0x12a29b:0x14e},_0x2d7d5d=_0x8f61,_0x215611=_0x592a79();while(!![]){try{const _0x308760=parseInt(_0x2d7d5d(0x149))/0x1+parseInt(_0x2d7d5d(0x14f))/0x2+parseInt(_0x2d7d5d(_0x1b7536._0x1128ad))/0x3*(-parseInt(_0x2d7d5d(_0x1b7536._0x3d322b))/0x4)+parseInt(_0x2d7d5d(0x151))/0x5*(parseInt(_0x2d7d5d(_0x1b7536._0x230816))/0x6)+parseInt(_0x2d7d5d(0x14a))/0x7+-parseInt(_0x2d7d5d(0x14b))/0x8*(-parseInt(_0x2d7d5d(_0x1b7536._0x12a29b))/0x9)+-parseInt(_0x2d7d5d(0x14d))/0xa;if(_0x308760===_0x14f9cd)break;else _0x215611['push'](_0x215611['shift']());}catch(_0x10b191){_0x215611['push'](_0x215611['shift']());}}}(_0x3dc0,0xb4d12));const CEC_PERMISSION_CONFIG=_0x3722ec(0x150);
+/*
+腳本全功能原子化清單 (共 8 大模組，40 項獨立功能)
+🤖 自動化與快捷操作 (Automation & Quick Actions)
+feat_iwt_buttons: I Want To 快捷按鈕顯示 (決定是否在頁面注入 Re-open, Close, Doc Contact 按鈕)。
+feat_iwt_auto_execute: I Want To 自動執行邏輯 (若關閉，點擊按鈕可能只會幫忙選單，不會自動點擊 Submit)。
+feat_quick_action_buttons: 模態框快捷按鈕顯示 (運輸、清關、派送等按鈕的注入)。
+autoSaveAfterQuickAction: 快捷按鈕自動保存 (點擊快捷按鈕後是否允許自動觸發 Save)。
+autoScrollAfterActionButtons: 快捷按鈕注入後自動下移網頁 (點擊後自動將畫面下捲 111px)。
+autoAssignUser: 自動指派 (Auto Assign) (進入 Case 時，若 Owner 不是自己，是否自動點擊 Assign to me)。
+
+📝 富文本編輯器與模版 (Editor & Templates)
+feat_template_shortcuts: 模版快捷按鈕顯示 (編輯器下方的前 5 個常用模版按鈕)。
+feat_manual_convert_btns: 手動繁簡轉換按鈕 (顯示 [轉繁] / [轉簡] 按鈕)。
+feat_auto_convert: 自動繁簡轉換引擎 (包含貼上攔截、打字實時轉換。若關閉，即使點了模版也不會啟動底層轉換監聽)。
+postInsertionEnhancementsEnabled: 模版插入後增強處理 (包含光標精準定位與智能粘貼)。
+
+🔍 外部查詢與 IVP (External Queries)
+autoIVPQueryEnabled: 自動查詢 IVP (檢測到 1Z 追蹤號時，是否自動發送 postMessage 給 IVP 視窗)。
+autoWebQueryEnabled: 自動查詢官網 (是否自動發送 postMessage 給 UPS 官網視窗)。
+autoSwitchEnabled: 自動切換至 IVP 視窗 (檢測到追蹤號後，是否自動將焦點切換至 IVP 視窗)。
+feat_datatable_ivp_btns: 列表 IVP/Web 按鈕注入 (在 Related Cases 或其他表格中注入單行的 IVP/Web 查詢按鈕)。
+blockIVPCard: 屏蔽原生 IVP 卡片 (是否允許腳本移除 Salesforce 原生的 IVP iframe)。
+
+🚨 PCA 與特殊案件邏輯 (PCA & Special Cases)
+pcaDoNotClosePromptEnabled: 預付/開查 Do Not Close 彈窗提示 (點擊 Send 時的攔截警告)。
+pcaCaseListHintEnabled: 列表頁開查/預付時間標籤 (在 My Open Cases 列表中顯示「預付 - 3天2時」等標籤)。
+pcaQueueHighlightEnabled: 非 Chinese Queue 高亮與一鍵轉派 (進入 Case 時檢查 Most Recent Queue 並標紅)。
+feat_pca_list_sort: PCA 列表排序按鈕 (列表頁的「PCA提示排序」按鈕)。
+
+👥 聯繫人與帳戶處理 (Contact & Account)
+accountHighlightMode: 帳戶背景高亮 (根據 Preferred 狀態標示 Moccasin 顏色，支援 PCA/Dispatch 模式)。
+feat_suspended_blocker: Suspended 帳戶攔截 (檢測到 Suspended 時，自動將 Schedule a Pickup 按鈕標紅並禁用)。
+feat_contact_copy: 聯繫人卡片點擊複製 (點擊姓名、電話、郵箱自動複製)。
+feat_modal_table_enhance: Associate Contact 彈窗表格增強 (重排表格欄位順序，並將匹配 1Z 追蹤號的行標示黃底)。
+autoLinkContactOnCopy: Associate Contact 自動關聯 (在彈窗中點擊姓名複製後，是否自動點擊 Link Contact)。
+sentinelCloseEnabled: Link Contact 快速關閉 (點擊 Link 後是否使用 CSS 強制隱藏彈窗)。
+
+📅 跟進與提醒系統 (Follow-up & Notifications)
+
+followUpPanelEnabled: 跟進面板顯示 (右下角懸浮面板與 Case 內的嵌入面板)。
+feat_followup_set_time: 設定跟進時間按鈕 (在 Case 標題旁的 📅 按鈕)。
+feat_followup_send_intercept: 發送時跟進記錄刪除提示 (點擊 Send 時，若 Case 在面板中，提示是否刪除)。
+notifyOnRepliedCaseEnabled: 近期已回覆提示 (發送後 10 小時內再次進入 Case 時的巨大中央提示)。
+highlightExpiringCasesEnabled: 快過期 Case 標紅 (列表頁 Importance 欄位非 Priority 時標紅)。
+
+🔄 介面增強與轉派 (UI Enhancements & Routing)
+
+feat_change_owner_menu: Change Owner 懸浮菜單 (包含 MRU、右鍵貼上等進階轉派功能)。
+feat_related_cases_extractor: Related Cases 數據提取與排序 (自動展開行並提取 Owner/Queue)。
+autoLoadAllUpdates: 自動加載 Updates (背景無感加載 5 頁 Feed)。
+cleanModeEnabled: 組件屏蔽 (Clean Mode) (隱藏頂部面板、側邊欄等)。
+feat_header_case_copy: 頂部 Case 號碼精準複製 (滑鼠懸停標題時變半透明，點擊精準複製 C-xxxxxxxxxx)。
+feat_compose_btn_alert: Compose 按鈕超期標紅 (檢測到 Milestone 超時，自動將回覆按鈕標紅)。
+feat_associate_btn_alert: Associate 按鈕關聯案件標紅 (當 Related Cases 數量大於 0 時，將按鈕與標籤標紅提示)。
+feat_desc_height_adjust: Case 描述框高度調整 (強制撐開 Description 欄位的高度)。
+feat_top_control_btns: 頂部控制按鈕 (在 Salesforce 頂部 Logo 旁注入設置與暫停按鈕)。
+
+💾 數據管理 (Data Management)
+feat_export_config: 導出配置/匯入配置 (JSON 格式的設定檔備份與還原)。
+feat_export_reports: 導出報表 (導出跟進名單與活動紀錄的 CSV 檔案)。
+*/
+
+
